@@ -1,6 +1,6 @@
 # Incremental Dungeon Crawler
 
-A text-based incremental dungeon crawler game with multiple biomes and dungeon sizes, built in C++.
+A text-based incremental dungeon crawler game with multiple biomes and dungeon sizes, available in both **Python** and **C++**.
 
 ## Features
 
@@ -34,16 +34,70 @@ A text-based incremental dungeon crawler game with multiple biomes and dungeon s
 6. Complete dungeons to earn achievements
 7. Challenge harder dungeons with your upgraded character
 
-## Building the Game
+## Building and Running the Game
 
-### Requirements
+The game is available in two versions:
+1. **Python version** (Recommended for quick start)
+2. **C++ version** (Compiled for maximum performance)
+
+### Python Version
+
+#### Requirements
+- Python 3.6 or higher
+- No external dependencies (uses only standard library)
+
+#### Running the Game
+```bash
+python3 game.py
+```
+
+Or make it executable and run directly:
+```bash
+chmod +x game.py
+./game.py
+```
+
+The Python version requires no compilation and works on any platform with Python installed.
+
+#### Building Standalone Executable (Optional)
+
+You can create a standalone executable (.exe on Windows, binary on Linux/macOS) that doesn't require Python to be installed:
+
+**Windows:**
+```bash
+build-exe.bat
+```
+This creates `dist/DungeonCrawler.exe` which can be distributed and run on any Windows PC.
+
+**Linux/macOS:**
+```bash
+./build-exe.sh
+```
+This creates `dist/DungeonCrawler` which can be distributed and run on the same platform.
+
+**Manual Build:**
+```bash
+# Install PyInstaller (one time only)
+pip install pyinstaller
+
+# Build executable
+pyinstaller --onefile --name "DungeonCrawler" game.py
+
+# The executable will be in the dist/ directory
+```
+
+The executable is self-contained (~7-10 MB) and includes Python and all dependencies.
+
+### C++ Version
+
+#### Requirements
 - C++17 compatible compiler (g++, clang++, MSVC)
 - Make (optional, for using Makefile)
 - MinGW-w64 (for cross-compiling Windows executables on Linux/macOS)
 
-### Compilation
+#### Compilation
 
-The game can be compiled as a **standalone executable** (static build) or with dynamic linking. Static builds are larger but contain all dependencies and can run anywhere without external libraries.
+The C++ game can be compiled as a **standalone executable** (static build) or with dynamic linking. Static builds are larger but contain all dependencies and can run anywhere without external libraries.
 
 #### Quick Build (Standalone Executable - Recommended):
 
@@ -119,17 +173,24 @@ cl /EHsc /std:c++17 /Fe:dungeon_crawler.exe main.cpp game.cpp
 
 ## Running the Game
 
-### Linux/macOS:
+### Python Version:
+```bash
+python3 game.py
+```
+
+### C++ Version:
+
+#### Linux/macOS:
 ```bash
 ./dungeon_crawler
 ```
 
-### Windows:
+#### Windows:
 ```bash
 dungeon_crawler.exe
 ```
 
-Or using Make:
+Or using Make (C++ version only):
 ```bash
 make run
 ```
