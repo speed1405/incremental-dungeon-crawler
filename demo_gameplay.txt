@@ -1,0 +1,130 @@
+INCREMENTAL DUNGEON CRAWLER - GAMEPLAY DEMONSTRATION
+====================================================
+
+This file demonstrates the key features of the game through example output.
+
+MAIN MENU
+---------
+The player starts with basic stats and can choose from several options:
+- Enter Dungeon (explore and fight)
+- Upgrade Stats (spend gold)
+- View Statistics (check progress)
+- Save/Load Game (persistence)
+
+Starting Stats:
+  Level: 1 | HP: 100/100
+  Attack: 10 | Defense: 5
+  Gold: 0 | EXP: 0/100
+  Floors Cleared: 0 | Dungeons: 0
+
+BIOME SELECTION
+---------------
+5 Different Biomes Available:
+1. Forest - Classic fantasy forest with goblins and wolves
+2. Cave - Dark underground with bats and golems
+3. Desert - Sandy wasteland with scorpions and mummies
+4. Ice Cavern - Frozen caves with yetis and ice dragons
+5. Volcano - Fiery depths with lava golems and phoenixes
+
+DUNGEON SIZE SELECTION
+---------------------
+4 Different Sizes:
+1. Small (5 floors, 1x difficulty) - Good for beginners
+2. Medium (10 floors, 1.5x difficulty) - Moderate challenge
+3. Large (20 floors, 2x difficulty) - For experienced players
+4. Epic (50 floors, 3x difficulty) - Maximum challenge
+
+COMBAT SYSTEM
+-------------
+Turn-based combat with:
+- Damage calculation: Your Attack - Enemy Defense (minimum 1)
+- Counter-attack: Enemy deals damage back each turn
+- Progressive difficulty: Enemies get stronger each floor
+- Boss fights: Final floor has a powerful boss with 3x rewards
+
+Example Combat Flow:
+  Player attacks Goblin for 7 damage (10 attack - 3 defense)
+  Goblin counter-attacks for 3 damage (8 attack - 5 defense)
+  Player HP: 100 -> 97
+  Goblin HP: 50 -> 43
+
+PROGRESSION MECHANICS
+--------------------
+1. Experience & Leveling:
+   - Kill enemies to earn XP
+   - Level up to gain stats automatically
+   - Level 1->2 requires 100 XP, then 150, 225, etc. (1.5x)
+
+2. Gold & Upgrades:
+   - Earn gold from defeating enemies
+   - Spend gold on permanent stat upgrades
+   - Upgrade costs scale exponentially (1.5x per purchase)
+
+3. Floor Healing:
+   - Heal 30% of max HP between floors
+   - Full heal when starting new dungeon
+   - Full heal on death (return to town)
+
+AUTO-BATTLE MODE
+----------------
+Toggle auto-battle to:
+- Automatically attack each turn
+- Speed up grinding and farming
+- Still see results of each fight
+- Can disable anytime
+
+SAVE/LOAD SYSTEM
+----------------
+- Save progress to save_game.json
+- Persist all stats, gold, experience
+- Track total achievements
+- Resume exactly where you left off
+
+UPGRADE SYSTEM
+--------------
+Three upgrade types:
+1. Max Health +20 (Cost: 50 gold base)
+2. Attack +5 (Cost: 100 gold base)
+3. Defense +2 (Cost: 80 gold base)
+
+Costs increase with each purchase!
+
+ENDGAME LOOP
+------------
+1. Clear small dungeons to gain levels and gold
+2. Upgrade your stats with earned gold
+3. Tackle larger dungeons for better rewards
+4. Try different biomes for variety
+5. Push for epic dungeons and boss completions
+6. Build the ultimate character!
+
+BOSS ENCOUNTERS
+---------------
+Final floor of each dungeon:
+- Boss enemy with unique name (e.g., "Forest Boss")
+- 2.5x health, 1.5x attack/defense
+- 3x gold and experience rewards
+- Greater challenge, greater rewards!
+
+ACHIEVEMENTS TO TRACK
+--------------------
+- Total Floors Cleared
+- Total Dungeons Completed
+- Maximum Level Reached
+- Gold Accumulated
+- Each Biome Mastered
+
+EXAMPLE PROGRESSION PATH
+------------------------
+1. Start: Level 1, 100 HP, 10 ATK, 5 DEF
+2. Clear Small Forest dungeon (5 floors)
+3. Earn ~50-100 gold and level up to 2-3
+4. Upgrade Attack once
+5. Try Medium Cave dungeon (10 floors)
+6. Continue upgrading and leveling
+7. Eventually tackle Epic Volcano dungeon!
+
+The game is designed for incremental progress where each run makes you
+stronger, allowing you to tackle increasingly difficult content.
+
+Enjoy the adventure!
