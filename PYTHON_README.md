@@ -31,12 +31,92 @@ Or use the provided script:
 ./run-python.sh
 ```
 
+## Building Standalone Executable
+
+You can create a standalone executable that doesn't require Python to be installed on the target system.
+
+### Windows Executable (.exe)
+
+On a Windows machine with Python installed:
+
+1. **Using the build script (easiest):**
+```bash
+build-exe.bat
+```
+
+2. **Manual build:**
+```bash
+# Install PyInstaller (one time)
+pip install pyinstaller
+
+# Build the executable
+pyinstaller --onefile --name "DungeonCrawler" game.py
+
+# Find your executable
+# It will be in: dist\DungeonCrawler.exe
+```
+
+The resulting `DungeonCrawler.exe` (approximately 7-10 MB) can be copied to any Windows PC and run without Python installed.
+
+### Linux/macOS Executable
+
+On Linux or macOS:
+
+1. **Using the build script (easiest):**
+```bash
+./build-exe.sh
+```
+
+2. **Manual build:**
+```bash
+# Install PyInstaller (one time)
+pip3 install pyinstaller
+
+# Build the executable
+pyinstaller --onefile --name "DungeonCrawler" game.py
+
+# Find your executable
+# It will be in: dist/DungeonCrawler
+```
+
+The resulting binary can be distributed and run on systems with the same OS.
+
+### Build Options
+
+PyInstaller supports various options to customize the build:
+
+```bash
+# Basic build (single file)
+pyinstaller --onefile game.py
+
+# With custom name and icon (Windows)
+pyinstaller --onefile --name "DungeonCrawler" --icon=icon.ico game.py
+
+# With console window hidden (not recommended for this game)
+pyinstaller --onefile --noconsole game.py
+
+# Clean build (remove previous builds)
+pyinstaller --clean --onefile game.py
+```
+
+### Distribution
+
+After building:
+1. The executable is in the `dist/` directory
+2. Copy the executable to distribute
+3. Users can run it directly without Python
+4. Save files are created in the same directory as the executable
+
 ## File Structure
 ```
 game.py            - Complete game implementation (single file)
-requirements.txt   - Python dependencies (none required)
+requirements.txt   - Python dependencies (PyInstaller for building exe)
 run-python.sh      - Convenience script to run the game
+build-exe.sh       - Script to build Linux/macOS executable
+build-exe.bat      - Script to build Windows executable
 save_game.json     - Game save file (created automatically)
+dist/              - Built executables (created by PyInstaller)
+build/             - Build artifacts (created by PyInstaller)
 ```
 
 ## Architecture

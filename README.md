@@ -59,6 +59,35 @@ chmod +x game.py
 
 The Python version requires no compilation and works on any platform with Python installed.
 
+#### Building Standalone Executable (Optional)
+
+You can create a standalone executable (.exe on Windows, binary on Linux/macOS) that doesn't require Python to be installed:
+
+**Windows:**
+```bash
+build-exe.bat
+```
+This creates `dist/DungeonCrawler.exe` which can be distributed and run on any Windows PC.
+
+**Linux/macOS:**
+```bash
+./build-exe.sh
+```
+This creates `dist/DungeonCrawler` which can be distributed and run on the same platform.
+
+**Manual Build:**
+```bash
+# Install PyInstaller (one time only)
+pip install pyinstaller
+
+# Build executable
+pyinstaller --onefile --name "DungeonCrawler" game.py
+
+# The executable will be in the dist/ directory
+```
+
+The executable is self-contained (~7-10 MB) and includes Python and all dependencies.
+
 ### C++ Version
 
 #### Requirements

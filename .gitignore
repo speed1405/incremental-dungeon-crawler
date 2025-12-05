@@ -54,3 +54,4 @@ ENV/
 *.egg-info/
 dist/
 build/
+*.spec
