@@ -1,0 +1,275 @@
+================================================================================
+                 INCREMENTAL DUNGEON CRAWLER - GAME SCREENS
+================================================================================
+
+SCREEN 1: MAIN MENU
+================================================================================
+  🏰 INCREMENTAL DUNGEON CRAWLER 🏰
+================================================================================
+
+📊 Player Stats:
+  Level: 1 | HP: 100/100
+  Attack: 10 | Defense: 5
+  Gold: 0 | EXP: 0/100
+  Floors Cleared: 0 | Dungeons: 0
+
+📜 Main Menu:
+  1. Enter Dungeon
+  2. Upgrade Stats
+  3. View Statistics
+  4. Save Game
+  5. Load Game
+  6. Exit
+
+Choose an option: 
+================================================================================
+
+SCREEN 2: BIOME SELECTION
+================================================================================
+  🗺️  SELECT DUNGEON
+================================================================================
+
+📊 Player Stats:
+  Level: 1 | HP: 100/100
+  Attack: 10 | Defense: 5
+  Gold: 0 | EXP: 0/100
+  Floors Cleared: 0 | Dungeons: 0
+
+🌍 Select Biome:
+  1. Forest
+  2. Cave
+  3. Desert
+  4. Ice Cavern
+  5. Volcano
+
+0. Back to Main Menu
+
+Choose a biome: 
+================================================================================
+
+SCREEN 3: DUNGEON SIZE SELECTION
+================================================================================
+  🗺️  Forest - SELECT SIZE
+================================================================================
+
+📊 Player Stats:
+  Level: 1 | HP: 100/100
+  Attack: 10 | Defense: 5
+  Gold: 0 | EXP: 0/100
+  Floors Cleared: 0 | Dungeons: 0
+
+📏 Select Dungeon Size:
+  1. Small (5 floors, 1x difficulty)
+  2. Medium (10 floors, 1.5x difficulty)
+  3. Large (20 floors, 2x difficulty)
+  4. Epic (50 floors, 3x difficulty)
+
+0. Back
+
+Choose a size: 
+================================================================================
+
+SCREEN 4: COMBAT - REGULAR ENEMY
+================================================================================
+  ⚔️  COMBAT - Forest Floor 1/5
+================================================================================
+
+📊 Player Stats:
+  Level: 1 | HP: 100/100
+  Attack: 10 | Defense: 5
+  Gold: 0 | EXP: 0/100
+  Floors Cleared: 0 | Dungeons: 0
+
+⚔️  Enemy: Goblin
+  HP: 50/50
+  Attack: 8 | Defense: 3
+
+⚔️  Combat Options:
+  1. Attack
+  2. Auto Battle (toggle)
+  3. Flee (return to town)
+
+Choose an option: 
+================================================================================
+
+SCREEN 5: COMBAT RESULT
+================================================================================
+
+💥 You dealt 7 damage!
+💔 Enemy dealt 3 damage!
+
+Press Enter to continue...
+================================================================================
+
+SCREEN 6: ENEMY DEFEATED
+================================================================================
+
+💥 You dealt 7 damage!
+🎉 Enemy defeated! +10 gold, +20 exp
+
+✨ Floor 1 cleared! Healing 30%...
+
+Press Enter to continue to next floor...
+================================================================================
+
+SCREEN 7: BOSS COMBAT
+================================================================================
+  ⚔️  COMBAT - Forest Floor 5/5
+================================================================================
+
+📊 Player Stats:
+  Level: 2 | HP: 115/120
+  Attack: 15 | Defense: 7
+  Gold: 40 | EXP: 30/150
+  Floors Cleared: 4 | Dungeons: 0
+
+⚔️  Enemy: Forest Boss
+  HP: 125/125
+  Attack: 12 | Defense: 5
+
+⚔️  Combat Options:
+  1. Attack
+  2. Auto Battle (toggle)
+  3. Flee (return to town)
+
+Choose an option: 
+================================================================================
+
+SCREEN 8: DUNGEON COMPLETED
+================================================================================
+
+💥 You dealt 10 damage!
+🎉 Enemy defeated! +30 gold, +60 exp
+
+🏆 DUNGEON COMPLETED! 🏆
+
+Press Enter to continue...
+================================================================================
+
+SCREEN 9: UPGRADE MENU
+================================================================================
+  ⬆️  UPGRADE STATS
+================================================================================
+
+📊 Player Stats:
+  Level: 2 | HP: 120/120
+  Attack: 15 | Defense: 7
+  Gold: 70 | EXP: 90/150
+  Floors Cleared: 5 | Dungeons: 1
+
+💰 Upgrades Available:
+  1. Max Health +20 (Cost: 50 gold)
+  2. Attack +5 (Cost: 100 gold)
+  3. Defense +2 (Cost: 80 gold)
+
+  0. Back to Main Menu
+
+Choose an upgrade: 
+================================================================================
+
+SCREEN 10: STATISTICS
+================================================================================
+  📈 STATISTICS
+================================================================================
+
+📊 Player Stats:
+  Level: 2 | HP: 120/120
+  Attack: 15 | Defense: 7
+  Gold: 20 | EXP: 90/150
+  Floors Cleared: 5 | Dungeons: 1
+
+🏆 Achievements:
+  Total Floors Cleared: 5
+  Total Dungeons Completed: 1
+  Current Level: 2
+
+Press Enter to return...
+================================================================================
+
+SCREEN 11: AUTO-BATTLE MODE
+================================================================================
+  ⚔️  COMBAT - Cave Floor 3/5
+================================================================================
+
+📊 Player Stats:
+  Level: 3 | HP: 135/140
+  Attack: 20 | Defense: 9
+  Gold: 125 | EXP: 180/225
+  Floors Cleared: 12 | Dungeons: 2
+
+⚔️  Enemy: Spider
+  HP: 60/60
+  Attack: 10 | Defense: 4
+
+⚔️  Combat Options:
+  1. Attack
+  2. Auto Battle (toggle)
+  3. Flee (return to town)
+
+⏩ Auto Battle ON - Fighting automatically...
+================================================================================
+
+SCREEN 12: LEVEL UP NOTIFICATION
+================================================================================
+
+After gaining enough experience, player levels up automatically:
+
+📊 Player Stats:
+  Level: 4 | HP: 160/160  ⬆️ +20 Max HP
+  Attack: 25 | Defense: 11  ⬆️ +5 ATK, +2 DEF
+  Gold: 250 | EXP: 10/337  🎉 LEVEL UP!
+  Floors Cleared: 20 | Dungeons: 3
+================================================================================
+
+PROGRESSION EXAMPLE: EARLY TO MID GAME
+================================================================================
+
+Start:
+  Level 1 | HP: 100 | ATK: 10 | DEF: 5 | Gold: 0
+
+After 1 Small Forest Dungeon:
+  Level 2-3 | HP: 120-140 | ATK: 15-20 | DEF: 7-9 | Gold: ~100
+
+After Upgrades + 3 More Small Dungeons:
+  Level 5 | HP: 200 | ATK: 35 | DEF: 15 | Gold: ~50
+
+After 2 Medium Dungeons:
+  Level 8 | HP: 260 | ATK: 50 | DEF: 21 | Gold: ~300
+
+Ready for Large and Epic Dungeons!
+  Level 10+ | HP: 300+ | ATK: 60+ | DEF: 25+ | Gold: 1000+
+================================================================================
+
+BIOME VARIETY EXAMPLES
+================================================================================
+
+FOREST:
+  - Enemies: Goblin, Wolf, Bear, Troll
+  - Boss: Forest Boss
+
+CAVE:
+  - Enemies: Bat, Spider, Slime, Golem
+  - Boss: Cave Boss
+
+DESERT:
+  - Enemies: Scorpion, Snake, Mummy, Sand Elemental
+  - Boss: Desert Boss
+
+ICE CAVERN:
+  - Enemies: Ice Sprite, Frost Wolf, Yeti, Ice Dragon
+  - Boss: Ice Cavern Boss
+
+VOLCANO:
+  - Enemies: Fire Imp, Lava Golem, Magma Worm, Phoenix
+  - Boss: Volcano Boss
+================================================================================
+
+All game screens demonstrate:
+✅ Clean text-based interface
+✅ Real-time stat updates
+✅ Clear menu navigation
+✅ Unicode emoji for visual appeal
+✅ Comprehensive feedback
+✅ Intuitive user experience
+
+The game provides a complete incremental dungeon crawler experience!
