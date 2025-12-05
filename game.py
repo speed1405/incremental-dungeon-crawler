@@ -240,8 +240,8 @@ class GameState:
             result.enemy_defeated = True
             result.gold_reward = self.current_enemy.gold_reward
             result.exp_reward = self.current_enemy.exp_reward
-            self.player.gold += self.current_enemy.gold_reward
-            self.player.gain_experience(self.current_enemy.exp_reward)
+            self.player.gold += result.gold_reward
+            self.player.gain_experience(result.exp_reward)
             self.player.floors_cleared += 1
             
             # Check if dungeon is completed
