@@ -1,6 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 LDFLAGS =
+STATIC_LDFLAGS = -static -static-libgcc -static-libstdc++
 TARGET = dungeon_crawler
 SOURCES = main.cpp game.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
@@ -18,8 +19,8 @@ $(TARGET): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS) $(LDFLAGS)
 
 # Static build target - creates a single standalone executable
-static: LDFLAGS += -static -static-libgcc -static-libstdc++
-static: $(TARGET)
+static: $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS) $(LDFLAGS) $(STATIC_LDFLAGS)
 
 %.o: %.cpp game.h
 	$(CXX) $(CXXFLAGS) -c $<
@@ -38,9 +39,8 @@ windows: $(WIN_OBJECTS)
 	$(MINGW_CXX) $(CXXFLAGS) -o $(WIN_TARGET) $(WIN_OBJECTS) $(LDFLAGS)
 
 # Windows static build - creates a standalone Windows executable
-windows-static: LDFLAGS += -static -static-libgcc -static-libstdc++
 windows-static: $(WIN_OBJECTS)
-	$(MINGW_CXX) $(CXXFLAGS) -o $(WIN_TARGET) $(WIN_OBJECTS) $(LDFLAGS)
+	$(MINGW_CXX) $(CXXFLAGS) -o $(WIN_TARGET) $(WIN_OBJECTS) $(LDFLAGS) $(STATIC_LDFLAGS)
 
 %.win.o: %.cpp game.h
 	$(MINGW_CXX) $(CXXFLAGS) -c $< -o $@
