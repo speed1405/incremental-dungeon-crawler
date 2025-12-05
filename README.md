@@ -42,17 +42,39 @@ A text-based incremental dungeon crawler game with multiple biomes and dungeon s
 
 ### Compilation
 
+The game can be compiled as a **standalone executable** (static build) or with dynamic linking. Static builds are larger but contain all dependencies and can run anywhere without external libraries.
+
+#### Quick Build (Standalone Executable - Recommended):
+```bash
+./build.sh
+```
+This creates a standalone executable with all dependencies included.
+
 #### Using Make (Linux/macOS):
+
+**Static build (standalone executable):**
+```bash
+make static
+```
+
+**Dynamic build:**
 ```bash
 make
 ```
 
 #### Using Make on Windows (with MinGW):
 ```bash
-mingw32-make
+mingw32-make static
 ```
 
 #### Manual Compilation (any platform):
+
+**Standalone executable (static linking):**
+```bash
+g++ -std=c++17 -Wall -Wextra -O2 -o dungeon_crawler main.cpp game.cpp -static -static-libgcc -static-libstdc++
+```
+
+**Dynamic linking:**
 ```bash
 g++ -std=c++17 -Wall -Wextra -O2 -o dungeon_crawler main.cpp game.cpp
 ```
@@ -61,6 +83,8 @@ g++ -std=c++17 -Wall -Wextra -O2 -o dungeon_crawler main.cpp game.cpp
 ```bash
 cl /EHsc /std:c++17 /Fe:dungeon_crawler.exe main.cpp game.cpp
 ```
+
+**Note:** Static builds are larger (~2.4MB) but are completely standalone and portable. Dynamic builds are smaller (~88KB) but require system libraries to be present.
 
 ## Running the Game
 
