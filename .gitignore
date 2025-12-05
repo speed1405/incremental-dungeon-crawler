@@ -40,3 +40,17 @@ cmake_install.cmake
 
 # Game saves
 save_game.json
+test_save.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
