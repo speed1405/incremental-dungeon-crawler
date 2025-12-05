@@ -39,16 +39,25 @@ A text-based incremental dungeon crawler game with multiple biomes and dungeon s
 ### Requirements
 - C++17 compatible compiler (g++, clang++, MSVC)
 - Make (optional, for using Makefile)
+- MinGW-w64 (for cross-compiling Windows executables on Linux/macOS)
 
 ### Compilation
 
 The game can be compiled as a **standalone executable** (static build) or with dynamic linking. Static builds are larger but contain all dependencies and can run anywhere without external libraries.
 
 #### Quick Build (Standalone Executable - Recommended):
+
+**Linux/macOS:**
 ```bash
 ./build.sh
 ```
 This creates a standalone executable with all dependencies included.
+
+**Windows (cross-compile from Linux/macOS):**
+```bash
+./build-windows.sh
+```
+This creates a Windows executable (dungeon_crawler.exe) using MinGW cross-compiler.
 
 #### Using Make (Linux/macOS):
 
@@ -60,6 +69,23 @@ make static
 **Dynamic build:**
 ```bash
 make
+```
+
+#### Using Make for Windows (cross-compile from Linux/macOS):
+
+**Static Windows build (recommended):**
+```bash
+make windows-static
+```
+
+**Dynamic Windows build:**
+```bash
+make windows
+```
+
+**Clean Windows build files:**
+```bash
+make clean-windows
 ```
 
 #### Using Make on Windows (with MinGW):
@@ -77,6 +103,11 @@ g++ -std=c++17 -Wall -Wextra -O2 -o dungeon_crawler main.cpp game.cpp -static -s
 **Dynamic linking:**
 ```bash
 g++ -std=c++17 -Wall -Wextra -O2 -o dungeon_crawler main.cpp game.cpp
+```
+
+**Windows cross-compilation (Linux/macOS):**
+```bash
+x86_64-w64-mingw32-g++ -std=c++17 -Wall -Wextra -O2 -o dungeon_crawler.exe main.cpp game.cpp -static -static-libgcc -static-libstdc++
 ```
 
 #### On Windows with MSVC:
