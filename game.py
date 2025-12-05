@@ -129,6 +129,8 @@ class CombatResult:
         self.player_died = False
         self.floor_cleared = False
         self.dungeon_completed = False
+        self.gold_reward = 0
+        self.exp_reward = 0
 
 
 class GameState:
@@ -236,6 +238,8 @@ class GameState:
         # Check if enemy is defeated
         if not self.current_enemy.is_alive():
             result.enemy_defeated = True
+            result.gold_reward = self.current_enemy.gold_reward
+            result.exp_reward = self.current_enemy.exp_reward
             self.player.gold += self.current_enemy.gold_reward
             self.player.gain_experience(self.current_enemy.exp_reward)
             self.player.floors_cleared += 1
@@ -292,11 +296,14 @@ class GameState:
     def get_upgrade_cost(self, stat: str) -> int:
         """Get the cost to upgrade a stat"""
         if stat == "health":
-            return int(50 * (1.5 ** (self.player.max_health // 20 - 5)))
+            upgrades = max(0, self.player.max_health // 20 - 5)
+            return int(50 * (1.5 ** upgrades))
         elif stat == "attack":
-            return int(100 * (1.5 ** (self.player.attack // 5 - 2)))
+            upgrades = max(0, self.player.attack // 5 - 2)
+            return int(100 * (1.5 ** upgrades))
         elif stat == "defense":
-            return int(80 * (1.5 ** (self.player.defense // 2 - 2)))
+            upgrades = max(0, self.player.defense // 2 - 2)
+            return int(80 * (1.5 ** upgrades))
         return 0
     
     def toggle_auto_battle(self):
@@ -357,6 +364,12 @@ class GameState:
             self.player.exp_to_next_level = player_data["expToNextLevel"]
             self.player.floors_cleared = player_data["floorsCleared"]
             self.player.dungeons_completed = player_data["dungeonsCompleted"]
+            
+            # Restore game state (note: we don't restore in_dungeon to avoid inconsistent state)
+            # Players always start in town after loading
+            self.current_floor = 0
+            self.auto_battle = False
+            self.in_dungeon = False
             
             return True
         except Exception:
@@ -494,8 +507,8 @@ def combat_menu(game: GameState):
                 print(f"\n💥 You dealt {result.player_damage} damage!")
                 
                 if result.enemy_defeated:
-                    print(f"🎉 Enemy defeated! +{game.current_enemy.gold_reward} gold, "
-                         f"+{game.current_enemy.exp_reward} exp")
+                    print(f"🎉 Enemy defeated! +{result.gold_reward} gold, "
+                         f"+{result.exp_reward} exp")
                     
                     if result.dungeon_completed:
                         print("\n🏆 DUNGEON COMPLETED! 🏆")
