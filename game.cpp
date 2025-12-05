@@ -363,9 +363,11 @@ std::vector<DungeonSize> GameState::getAllDungeonSizes() const {
 // UI functions
 void clearScreen() {
 #ifdef _WIN32
-    system("cls");
+    int ret = system("cls");
+    (void)ret; // Suppress unused variable warning
 #else
-    system("clear");
+    int ret = system("clear");
+    (void)ret; // Suppress unused variable warning
 #endif
 }
 

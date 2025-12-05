@@ -37,7 +37,6 @@ obj/
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
-Makefile
 
 # Game saves
 save_game.json
